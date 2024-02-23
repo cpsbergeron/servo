@@ -10,7 +10,18 @@
     "files": [
         "README.md",
         "main.blocks",
-        "main.ts"
+        "main.ts",
+        "servo_1_a.md",
+        "servo_1_b.md",
+        "servo_2.md",
+        "servo_3.md",
+        "servo_4.md",
+        "servo_5.md",
+        "servo_6.md",
+        "servo_7_a.md",
+        "servo_7_b.md",
+        "servo_8.md",
+        "servo_9.md"
     ],
     "testFiles": [
         "test.ts"
@@ -23,5 +34,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
