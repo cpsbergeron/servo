@@ -21,7 +21,8 @@
         "servo_7_a.md",
         "servo_7_b.md",
         "servo_8.md",
-        "servo_9.md"
+        "servo_9.md",
+        "servo_1_c.md"
     ],
     "testFiles": [
         "test.ts"
