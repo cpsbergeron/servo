@@ -102,6 +102,22 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
+## Étape 10
+
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input:lorsque secouer||``.
+
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
+
+```blocks
+
+input.onGesture(Gesture.Shake, function () {
+       pins.servoWritePin(AnalogPin.P1, 0)
+})
+
+```
+
 ## @showdialog 
 
 Félicitations! Tu as terminé de programmer un circuit électrique avec un servomoteur.
