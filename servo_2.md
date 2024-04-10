@@ -24,13 +24,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P2 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P2, 0)
+pins.servoWritePin(AnalogPin.P1, 0)
 
 ```
 
@@ -38,7 +38,7 @@ pins.servoWritePin(AnalogPin.P2, 0)
 
 Crée une ``||variables: variable||`` et donne lui le nom ``||variables: Angle||``.
 
-Ajoute le bloc ``||variables: définir Angle||`` dans le bloc ``||input: lorsque incliné à droite||``.
+Ajoute le bloc ``||variables: définir Angle||`` dans le bloc ``||input: lorsque incliner à droite||``.
 
 ```blocks
 
@@ -67,13 +67,13 @@ input.onGesture(Gesture.TiltRight, function () {
 
 Remplace la valeur ``||math: 0||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par la valeur ``||math: 1||``.
 
-Remplace la valeur ``||math: 10||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par la valeur ``||math: 89||``. 
+Remplace la valeur ``||math: 10||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par la valeur ``||math: 90||``. 
 
 ```blocks
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
+    Angle = randint(1, 90)
 })
 
 ```
@@ -86,7 +86,7 @@ Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||variables
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
+    Angle = randint(1, 90)
     pins.servoWritePin(AnalogPin.P0, 180)
 })
 
@@ -97,7 +97,7 @@ input.onGesture(Gesture.TiltRight, function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par le bloc ``||variables:  Angle ||``.
 
@@ -105,8 +105,8 @@ Remplace la valeur ``|| pins: 180 ||`` par le bloc ``||variables:  Angle ||``.
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
 })
 
 ```
@@ -121,8 +121,8 @@ Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` pa
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
 })
 
@@ -138,8 +138,8 @@ Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par la va
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
     basic.pause(5000)
 })
@@ -157,8 +157,8 @@ Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||basic: pa
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
     basic.pause(5000)
     pins.servoWritePin(AnalogPin.P0, 180)
@@ -171,7 +171,7 @@ input.onGesture(Gesture.TiltRight, function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par  ``|| pins: 0 ||``.
 
@@ -179,11 +179,11 @@ Remplace la valeur ``|| pins: 180 ||`` par  ``|| pins: 0 ||``.
 
 let Angle = 0
 input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 89)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
     basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P2, 0)
+    pins.servoWritePin(AnalogPin.P1, 0)
 })
 
 
@@ -191,153 +191,43 @@ input.onGesture(Gesture.TiltRight, function () {
 
 ## Étape 13
 
-Ajoute le bloc ``||variables: définir Angle||`` dans le bloc ``||input: lorsque incliné à gauche||``.
+Dupplique le bloc ``||input: lorsque incliner à droite||`` et son contenu.
+
+Remplace la valeur ``||input: incliner à droite||`` par la valeur ``||input: incliner à gauche||`` 
+
 
 ```blocks
 
 let Angle = 0
 input.onGesture(Gesture.TiltLeft, function () {
-    Angle = 0
+    Angle = randint(1, 90)
+    pins.servoWritePin(AnalogPin.P1, Angle)
+    basic.showNumber(Angle)
+    basic.pause(5000)
+    pins.servoWritePin(AnalogPin.P1, 0)
 })
+
 
 ```
 
 ## Étape 14
 
-Remplace la valeur ``||variables: 0||`` du bloc ``||variables: définir Angle ||`` par le bloc ``||math: choisir au hasard de 0 à 10||``. 
+Modifie les valeurs.
 
-```blocks
+Remplace ``||math: 1 ||`` par ``||math: 91 ||``.
 
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(0, 10)
-})
-
-
-```
-
-## Étape 15
-
-Remplace la valeur ``||math: 0||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par ``||math: 91||``.
-
-Remplace la valeur ``||math: 10||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par ``||math: 180||``. 
+Remplace ``||math: 90 ||`` par ``||math: 180 ||``.
 
 ```blocks
 
 let Angle = 0
 input.onGesture(Gesture.TiltLeft, function () {
     Angle = randint(91, 180)
-})
-
-```
-
-## Étape 16
-
-Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||variables: définir Angle ||``.
-
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P0, 180)
-})
-
-
-```
-
-## Étape 17
-
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par le bloc ``||variables:  Angle ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P2, Angle)
-})
-
-
-```
-
-## Étape 18
-
-Ajoute le bloc ``|| basic: montre nombre ||`` sous le bloc ``|| pins: régler position servo ||``.
-
-Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` par le bloc ``|| variables: Angle ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P2, Angle)
-    basic.showNumber(Angle)
-})
-
-```
-
-## Étape 19
-
-Ajoute le bloc ``|| basic: pause ||`` sous le bloc ``|| basic: montrer nombre ||``.
-
-Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par ``|| basic: 5000 ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P2, Angle)
+    pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
     basic.pause(5000)
+    pins.servoWritePin(AnalogPin.P1, 0)
 })
-
-```
-
-## Étape 20
-
-Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||basic: pause ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P2, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P0, 180)
-})
-
-```
-
-## Étape 21
-
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P2, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P2, 0)
-})
-
-
 
 ```
 
