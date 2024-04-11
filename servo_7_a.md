@@ -1,6 +1,6 @@
 # Circuits électriques et servomoteur
 
-# Tutoriel - Défi supplémentaire
+# Tutoriel - Émetteur
 
 ## @showdialog
 

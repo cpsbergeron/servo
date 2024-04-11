@@ -25,7 +25,7 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie le bloc ``||pins:régler position servo||``.
 
-Remplace la broche ``||pins:P0||`` par ``||pins:P1||``.
+Remplace la valeur ``||pins:P0||`` par ``||pins:P1||``.
 
 Remplace la valeur ``||pins:180||`` par ``||pins:0||``.
 
@@ -275,119 +275,6 @@ input.onButtonPressed(Button.A, function () {
             # . . . #
             `)
     }
-})
-
-```
-
-## Étape 17
-
-Duplique le bloc ``||logic: si vrai alors||`` et positionne celui-ci sous le bloc ``||logic: si vrai alors||``.
-
-```blocks
-
-let Angle = 0
-input.onButtonPressed(Button.A, function () {
-    Angle = randint(1, 180)
-    basic.showNumber(Angle)
-    basic.pause(2000)
-    if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        basic.showLeds(`
-            . # # # .
-            # # . # #
-            # . . . #
-            # # # # #
-            # . . . #
-            `)
-    }
-    if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        basic.showLeds(`
-            . # # # .
-            # # . # #
-            # . . . #
-            # # # # #
-            # . . . #
-            `)
-    }
-})
-
-
-```
-
-## Étape 18
-
-Modifie les valeurs pour que :
-- le ``||pins: servomoteur ||`` puisse réaliser un angle obtus lorsque le ``||input: bouton A est pressé ||``,
-- la lumière en ``||pins: P12 ||`` s'éteigne,
-- la lumière en ``||pins: P13 ||`` s'allumer,
-- la ``||basic: lettre O ||`` (pour obtus) s'affiche.
-
-```blocks
-
-let Angle = 0
-input.onButtonPressed(Button.A, function () {
-    Angle = randint(1, 180)
-    basic.showNumber(Angle)
-    basic.pause(2000)
-    if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        basic.showLeds(`
-            . # # # .
-            # # . # #
-            # . . . #
-            # # # # #
-            # . . . #
-            `)
-    }
-    if (Angle > 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        basic.showLeds(`
-            . # # # .
-            # # . # #
-            # . . . #
-            # # . # #
-            . # # # .
-            `)
-    }
-})
-
-
-```
-
-## Étape 19
-
-Ajoute le bloc ``||basic: effacer l'écran||`` dans le bloc ``||input: lorsque le bouton B est pressé||``.
-
-```blocks
-
-input.onButtonPressed(Button.B, function () {
-    basic.clearScreen()
-})
-
-```
-
-## Étape 20
-
-Ajoute les blocs de programmation manquants pour réinitialiser le servomoteur à 0 et éteindre les lumières lorsque le bouton B est pressé.
-
-Regarde l'indice et modifie les valeurs incorrectes.
-
-```blocks
-
-input.onButtonPressed(Button.B, function () {
-    basic.clearScreen()
-    pins.servoWritePin(AnalogPin.P0, 180)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P0, 0)
 })
 
 ```

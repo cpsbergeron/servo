@@ -27,14 +27,14 @@ let Angle = 0
 
 Ajoute le bloc ``||pins: régler position servo ||`` sous le bloc ``||variables:définir Angle||``.
 
-Remplace la broche ``||pins: P0 ||`` par ``||pins: P2 ||``.
+Remplace la broche ``||pins: P0 ||`` par ``||pins: P1 ||``.
 
 Remplace la valeur ``||pins: 180 ||`` par ``||pins: 0 ||``.
 
 ```blocks
 
 let Angle = 0
-pins.servoWritePin(AnalogPin.P2, 0)
+pins.servoWritePin(AnalogPin.P1, 0)
 
 ```
 
@@ -49,7 +49,7 @@ Les valeurs ``||pins: 0 ||`` demeurent les mêmes.
 ```blocks
 
 let Angle = 0
-pins.servoWritePin(AnalogPin.P2, 0)
+pins.servoWritePin(AnalogPin.P1, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P13, 0)
 pins.digitalWritePin(DigitalPin.P14, 0)
@@ -93,7 +93,7 @@ input.onButtonPressed(Button.A, function () {
 
 Ajoute le bloc ``||pins: régler position servo ||`` sous le bloc ``||variables:modifier Angle||``.
 
-Remplace la valeur ``||pins: P0 ||`` par la valeur ``||pins: P2 ||``.
+Remplace la valeur ``||pins: P0 ||`` par la valeur ``||pins: P1 ||``.
 
 Remplace la valeur ``||pins: 180 ||`` par le bloc ``||variables: Angle ||``.
 
@@ -103,7 +103,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
     }
 })
 
@@ -121,7 +121,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
     }
 })
@@ -138,7 +138,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (true) {
         	
@@ -158,7 +158,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (0 < 0) {
         	
@@ -183,7 +183,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
         	
@@ -208,7 +208,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -230,7 +230,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -255,7 +255,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -284,7 +284,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -313,7 +313,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -342,7 +342,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -371,7 +371,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -399,7 +399,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -430,7 +430,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -465,7 +465,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
@@ -500,7 +500,7 @@ let Angle = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 36; index++) {
         Angle += 5
-        pins.servoWritePin(AnalogPin.P2, Angle)
+        pins.servoWritePin(AnalogPin.P1, Angle)
         basic.pause(500)
         if (Angle < 60) {
             pins.digitalWritePin(DigitalPin.P12, 1)
