@@ -13,8 +13,7 @@ Conserve les blocs ``||basic:au démarrage||`` et ``||basic:toujours||``.
 ```blocks
 
 basic.forever(function () {
-	
-})
+	})
 
 ```
 
@@ -59,7 +58,7 @@ pins.digitalWritePin(DigitalPin.P0, 0)
 
 Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
-Remplace les broches ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
+Remplace les valeurs des blocs ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
 
 Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 0 ||``, ``|| pins: 0 ||`` et ``|| pins: 0 ||``.
 
@@ -94,7 +93,7 @@ pins.digitalWritePin(DigitalPin.P14, 0)
 
 ## Étape 7
 
-Remplace la valeur ``||variables: 0||`` du bloc ``||variables: définir Temperature ||`` par le bloc ``||input: température||``. 
+Remplace la valeur ``||variables: 0||`` du bloc ``||variables: définir Température ||`` par le bloc ``||input: température||``. 
 
 ```blocks
 
@@ -260,7 +259,7 @@ basic.forever(function () {
 
 ## Étape 17
 
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
+Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
 
 ```blocks
 
@@ -271,18 +270,21 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P0, 0)
     }
 })
+
 
 ```
 
 ## Étape 18
 
-Modifie les valeurs du bloc ``|| pins: écrire sur la broche ||``.
+Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P12 ||``.
+Remplace les valeurs ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
 
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
+Remplace la valeur ``|| pins: 0 ||`` du bloc ``|| pins: P12 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -293,6 +295,8 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -300,7 +304,7 @@ basic.forever(function () {
 
 ## Étape 19
 
-Ajoute le bloc ``|| logic: si vrai alors ||`` sous le bloc ``|| logic: si vrai alors ||``.
+Dupplique le bloc ``|| logic: si vrai alors ||`` et glisse-le sous le bloc ``|| logic: si vrai alors ||``.
 
 ```blocks
 
@@ -311,19 +315,25 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (true) {
-    	
+    if (Température <= 21) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
+
 
 ```
 
 ## Étape 20
 
-Modifie le bloc ``|| logic: si vrai alors ||``.
+Modifie le deuxième bloc ``|| logic: si vrai alors ||``.
 
-Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` par le bloc ``|| logic: et ||``.
+Remplace le bloc ``|| logic: 0 ≤ 0 ||`` par le bloc ``|| logic: et ||``.
 
 ```blocks
 
@@ -334,9 +344,14 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
     if (false && false) {
-    	
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -359,9 +374,14 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
     if (0 >= 0 && 0 <= 0) {
-    	
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -384,9 +404,14 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
     if (Température >= 22 && 0 <= 0) {
-    	
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -409,17 +434,29 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
-    	
+    if (Température >= 22 && 27 <= Température) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
+
 
 ```
 
 ## Étape 24
 
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``|| logic: si vrai alors ||``.
+Modifie les valeurs des blocs ``|| pins: régler position servo ||`` et des blocs ``|| pins: écrire sur la broche ||``.
+
+Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: régler position servo ||`` par ``|| pins: 90||``.
+
+Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
+
+Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -430,9 +467,14 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P0, 180)
+    if (Température >= 22 && 27 <= Température) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 0)
+        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -440,11 +482,7 @@ basic.forever(function () {
 
 ## Étape 25
 
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 90 ||``.
+Dupplique le premier bloc ``|| logic: si vrai alors ||`` et glisse-le sous le deuxième bloc ``|| logic: si vrai alors ||``.
 
 ```blocks
 
@@ -455,9 +493,20 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
+    if (Température >= 22 && 27 <= Température) {
         pins.servoWritePin(AnalogPin.P1, 90)
+        pins.digitalWritePin(DigitalPin.P12, 0)
+        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
+    }
+    if (Température <= 21) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -465,7 +514,9 @@ basic.forever(function () {
 
 ## Étape 26
 
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
+Modifie le troisième bloc ``|| logic: si vrai alors ||``.
+
+Remplace le bloc ``|| logic: 0 ≤ 0 ||`` par le bloc ``|| logic: 0 ≥ 0 ||``.
 
 ```blocks
 
@@ -476,10 +527,20 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
+    if (Température >= 22 && 27 <= Température) {
         pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P12, 0)
+        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
+    }
+    if (Température >= 21) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -487,11 +548,9 @@ basic.forever(function () {
 
 ## Étape 27
 
-Modifie les valeurs du bloc ``|| pins: écrire sur la broche ||``.
+Modifie le troisième bloc ``|| logic: si vrai alors ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P13 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
+Remplace la valeur ``|| logic: 27 ||`` par la valeur ``|| logic: 28 ||``.
 
 ```blocks
 
@@ -502,10 +561,20 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
+    if (Température >= 22 && 27 <= Température) {
         pins.servoWritePin(AnalogPin.P1, 90)
+        pins.digitalWritePin(DigitalPin.P12, 0)
         pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
+    }
+    if (Température >= 28) {
+        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
 })
 
@@ -513,7 +582,13 @@ basic.forever(function () {
 
 ## Étape 28
 
-Ajoute le bloc ``|| logic: si vrai alors ||`` sous le bloc ``|| logic: si vrai alors ||``.
+Modifie les valeurs du bloc ``|| pins: régler position servo ||`` et des blocs ``|| pins: écrire sur la broche ||``.
+
+Remplace le valeur ``|| pins: 45 ||`` du bloc ``|| pins: régler position servo ||`` par ``|| pins: 180||``.
+
+Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P13 ||`` par ``|| pins: 0 ||``.
+
+Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P14 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -524,182 +599,19 @@ basic.forever(function () {
     if (Température <= 21) {
         pins.servoWritePin(AnalogPin.P1, 45)
         pins.digitalWritePin(DigitalPin.P12, 1)
+        pins.digitalWritePin(DigitalPin.P13, 0)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
-    if (Température >= 22 && Température <= 27) {
+    if (Température >= 22 && 27 <= Température) {
         pins.servoWritePin(AnalogPin.P1, 90)
+        pins.digitalWritePin(DigitalPin.P12, 0)
         pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (true) {
-    	
-    }
-})
-
-
-```
-
-## Étape 29
-
-Modifie le bloc ``|| logic: si vrai alors ||``.
-
-Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` par le bloc ``|| logic: 0>=0 ||``.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (0 >= 0) {
-    	
-    }
-})
-
-```
-
-## Étape 30
-
-Modifie le bloc ``|| logic: 0 >= 0 ||``.
-
-Remplace la valeur ``|| logic: 0 ||`` de gauche par le bloc ``|| variables: Température ||``.
-
-Remplace la valeur ``|| logic: 0 ||`` de droite par la valeur ``|| logic: 28 ||``.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (Température >= 28) {
-    	
-    }
-})
-
-
-```
-
-## Étape 31
-
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``|| logic: si vrai alors ||``.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (Température >= 28) {
-        pins.servoWritePin(AnalogPin.P0, 180)
-    }
-})
-
-```
-
-## Étape 32
-
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
-
-La valeur ``|| pins: 180 ||`` demeure la même.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
+        pins.digitalWritePin(DigitalPin.P14, 0)
     }
     if (Température >= 28) {
         pins.servoWritePin(AnalogPin.P1, 180)
-    }
-})
-
-
-```
-
-## Étape 33
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (Température >= 28) {
-        pins.servoWritePin(AnalogPin.P1, 180)
-        pins.digitalWritePin(DigitalPin.P0, 0)
-    }
-})
-
-
-```
-
-## Étape 34
-
-Modifie les valeurs du bloc ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P14 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
-
-```blocks
-
-basic.forever(function () {
-    let Température = 0
-    basic.showNumber(Température)
-    basic.pause(1000)
-    if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-    }
-    if (Température >= 22 && Température <= 27) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-    }
-    if (Température >= 28) {
-        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.digitalWritePin(DigitalPin.P12, 0)
+        pins.digitalWritePin(DigitalPin.P13, 0)
         pins.digitalWritePin(DigitalPin.P14, 1)
     }
 })
