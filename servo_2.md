@@ -8,11 +8,19 @@ Programme le micro:bit, le servomoteur et le circuit électrique.
 
 ## Étape 1
 
-Supprime le bloc ``||basic:toujours||``.
+Conserve les blocs ``||basic:au démarrage||`` et ``||basic:toujours||``.
+
+```blocks
+
+basic.forever(function () {
+    
+})
+
+```
 
 ## Étape 2
 
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic:au démarrage||``.
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic: au démarrage||``.
 
 ```blocks
 
@@ -22,11 +30,11 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 ## Étape 3
 
-Modifie le bloc ``|| pins: régler position servo ||``.
+Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
@@ -36,134 +44,125 @@ pins.servoWritePin(AnalogPin.P1, 0)
 
 ## Étape 4
 
-Crée une ``||variables: variable||`` et donne lui le nom ``||variables: Angle||``.
-
-Ajoute le bloc ``||variables: définir Angle||`` dans le bloc ``||input: lorsque incliner à droite||``.
+Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``||basic: toujours||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = 0
+basic.forever(function () {
+    basic.showNumber(0)
 })
 
 ```
 
 ## Étape 5
 
-Remplace la valeur ``||variables: 0||`` du bloc ``||variables: définir Angle ||`` par le bloc ``||math: choisir au hasard de 0 à 10||``. 
+Modifie le bloc ``|| basic: montrer nombre ||``.
+
+Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` par le bloc ``|| input: niveau d'intensité lumineuse ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(0, 10)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
 })
-
 
 ```
 
 ## Étape 6
 
-Remplace la valeur ``||math: 0||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par la valeur ``||math: 1||``.
-
-Remplace la valeur ``||math: 10||`` du bloc ``||math: choisir au hasard de 0 à 10 ||`` par la valeur ``||math: 90||``. 
+Ajoute le bloc ``|| basic: pause ||`` sous le bloc ``|| basic: montrer nombre ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(100)
 })
 
 ```
 
 ## Étape 7
 
-Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||variables: définir Angle ||``.
+Modifie le bloc ``|| basic: pause ||``.
+
+Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par la valeur ``|| basic: 2000 ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P0, 180)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
 })
-
 
 ```
 
 ## Étape 8
 
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par le bloc ``||variables:  Angle ||``.
+Ajoute le bloc ``|| logic: si vrai alors ||`` sous le bloc ``|| basic: pause ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (true) {
+        
+    }
 })
 
 ```
 
 ## Étape 9
 
-Ajoute le bloc ``|| basic: montre nombre ||`` sous le bloc ``|| pins: régler position servo ||``.
+Modifie le bloc ``|| logic: si vrai alors ||``.
 
-Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` par le bloc ``|| variables: Angle ||``.
+Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` par le bloc ``|| logic: 0 <= 0 ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (0 <= 0) {
+        
+    }
 })
 
 ```
 
 ## Étape 10
 
-Ajoute le bloc ``|| basic: pause  ||`` sous le bloc ``|| basic: montrer nombre ||``.
+Modifie le bloc ``|| logic: 0 <= 0 ||``.
 
-Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par la valeur ``|| basic: 5000 ||``.
+Remplace la valeur ``|| logic: 0 ||`` de gauche par le bloc ``|| input: niveau d'intensité lumineuse ||``.
+
+Remplace la valeur ``|| logic: 0 ||`` de droite par la valeur ``|| logic: 39 ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (input.lightLevel() <= 39) {
+        
+    }
 })
-
-
 
 ```
 
-## Étape 11
+## Étape 111
 
-Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||basic: pause ||``.
-
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``|| logic: si vrai alors ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P0, 180)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (input.lightLevel() <= 39) {
+        pins.servoWritePin(AnalogPin.P0, 180)
+    }
 })
-
 
 ```
 
@@ -173,60 +172,62 @@ Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
 Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
-Remplace la valeur ``|| pins: 180 ||`` par  ``|| pins: 0 ||``.
+La valeur ``|| pins: 180 ||`` demeure la même.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltRight, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P1, 0)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (input.lightLevel() <= 39) {
+        pins.servoWritePin(AnalogPin.P1, 180)
+    }
 })
-
 
 ```
 
 ## Étape 13
 
-Dupplique le bloc ``||input: lorsque incliner à droite||`` et son contenu.
+Dupplique le bloc ``|| logic: si vrai alors ||`` et glisse-le sous le bloc ``|| logic: si vrai alors ||``.
 
-Remplace la valeur ``||input: incliner à droite||`` par la valeur ``||input: incliner à gauche||`` 
-
+Regarde l'indice au besoin.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(1, 90)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P1, 0)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (input.lightLevel() <= 39) {
+        pins.servoWritePin(AnalogPin.P1, 180)
+    }
+    if (input.lightLevel() <= 39) {
+        pins.servoWritePin(AnalogPin.P1, 180)
+    }
 })
-
 
 ```
 
 ## Étape 14
 
-Modifie les valeurs.
+Modifie le nouveau bloc ``|| logic: si vrai alors ||``.
 
-Remplace ``||math: 1 ||`` par ``||math: 91 ||``.
+Remplace ``|| logic: 0 <= 0 ||`` par ``|| logic: 0 >= 0 ||``.
 
-Remplace ``||math: 90 ||`` par ``||math: 180 ||``.
+Remplace la valeur ``|| logic: 39 ||`` par ``|| logic: 40 ||``.
+
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-let Angle = 0
-input.onGesture(Gesture.TiltLeft, function () {
-    Angle = randint(91, 180)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
-    basic.pause(5000)
-    pins.servoWritePin(AnalogPin.P1, 0)
+basic.forever(function () {
+    basic.showNumber(input.lightLevel())
+    basic.pause(2000)
+    if (input.lightLevel() <= 39) {
+        pins.servoWritePin(AnalogPin.P1, 180)
+    }
+    if (input.lightLevel() >= 40) {
+        pins.servoWritePin(AnalogPin.P1, 0)
+    }
 })
 
 ```

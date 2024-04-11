@@ -18,11 +18,11 @@
         "servo_4.md",
         "servo_5.md",
         "servo_6.md",
-        "servo_7_a.md",
-        "servo_7_b.md",
         "servo_8.md",
-        "servo_9.md",
-        "servo_1_c.md"
+        "servo_1_c.md",
+        "servo_7.md",
+        "servo_emetteur.md",
+        "servo_recepteur.md"
     ],
     "testFiles": [
         "test.ts"

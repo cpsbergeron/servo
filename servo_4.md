@@ -13,15 +13,68 @@ Conserve les blocs ``||basic:au démarrage||`` et ``||basic:toujours||``.
 ```blocks
 
 basic.forever(function () {
-	
+    
 })
 
 ```
 
 ## Étape 2
 
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input: lorsque le bouton A est pressé||``.
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic: au démarrage||``.
 
+```blocks
+
+pins.servoWritePin(AnalogPin.P0, 180)
+
+```
+
+## Étape 3
+
+Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
+
+Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
+
+```blocks
+
+pins.servoWritePin(AnalogPin.P1, 0)
+
+```
+
+## Étape 4
+
+Ajoute deux blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
+
+```blocks
+
+pins.servoWritePin(AnalogPin.P1, 0)
+pins.digitalWritePin(DigitalPin.P0, 0)
+pins.digitalWritePin(DigitalPin.P0, 0)
+
+```
+
+## Étape 5
+
+Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
+
+Remplace les valeurs ``|| pins: P0 ||`` par ``|| pins: P12 ||`` et ``|| pins: P13 ||``.
+
+Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 0 ||`` et ``|| pins: 1 ||``.
+
+P12 = Vert - P13 = Rouge
+
+```blocks
+
+pins.servoWritePin(AnalogPin.P1, 0)
+pins.digitalWritePin(DigitalPin.P12, 0)
+pins.digitalWritePin(DigitalPin.P13, 1)
+
+```
+
+## Étape 6
+
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input: lorsque le bouton A est pressé||``.
 
 ```blocks
 
@@ -31,87 +84,128 @@ input.onButtonPressed(Button.A, function () {
 
 ```
 
-## Étape 3
+## Étape 7
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 45 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
-})
-
-```
-
-## Étape 4
-
-Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 90 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.servoWritePin(AnalogPin.P1, 90)
 })
 
 ```
 
-## Étape 5
+## Étape 8
+
+Ajoute deux blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
+
+```blocks
+
+input.onButtonPressed(Button.A, function () {
+    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P0, 0)
+    })
+
+```
+
+## Étape 9
 
 Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
-Remplace les broches ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
+Remplace les valeurs ``|| pins: P0 ||`` par ``|| pins: P12 ||`` et ``|| pins: P13 ||``.
 
-Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 1 ||``, ``|| pins: 0 ||`` et ``|| pins: 0 ||``.
-
-Regarde l'indice!
+Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 1 ||`` et ``|| pins: 0 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P1, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
 })
 
 ```
 
-## Étape 6
+## Étape 10
 
-Dupplique le bloc ``||input: lorsque le bouton A est pressé||`` et son contenu.
+Ajoute le bloc ``|| basic: pause ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
 
-Remplace la valeur ``||input:A||`` par la valeur ``||input:B||``.
+Remplace la valeur ``|| basic: 100 ||`` par ``|| basic: 1000 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P1, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
+    basic.pause(1000)
 })
+
+```
+
+## Étape 11
+
+Ajoue le bloc ``|| basic: montrer l'icône ||`` sous le bloc ``|| basic: pause ||``.
+
+Remplace le ``|| basic: le grand coeur ||`` par un ``|| basic: crochet ||``.
+
+```blocks
+
+input.onButtonPressed(Button.A, function () {
+    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.digitalWritePin(DigitalPin.P12, 1)
+    pins.digitalWritePin(DigitalPin.P13, 0)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Yes)
+})
+
+```
+
+## Étape 12
+
+Duplique le bloc ``|| input: lorsque le bouton A est pressé ||``.
+
+Remplace la valeur ``|| input: A ||`` par ``|| input: B ||``.
+
+```blocks
+
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P1, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Yes)
 })
-
 
 ```
 
-## Étape 7
+## Étape 13
 
-Modifie le contenu du nouveau bloc ``||input: lorsque le bouton B est pressé||``.
+Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P1 ||`` par ``|| pins: 90 ||``.
+Remplace la valeur ``|| pins: 90 ||`` par ``|| pins: 0 ||``.
+
+```blocks
+
+input.onButtonPressed(Button.B, function () {
+    pins.servoWritePin(AnalogPin.P1, 0)
+    pins.digitalWritePin(DigitalPin.P12, 1)
+    pins.digitalWritePin(DigitalPin.P13, 0)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Yes)
+})
+
+```
+
+## Étape 14
+
+Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
 Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
 
@@ -123,67 +217,30 @@ input.onButtonPressed(Button.B, function () {
     pins.servoWritePin(AnalogPin.P1, 90)
     pins.digitalWritePin(DigitalPin.P12, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
-    pins.digitalWritePin(DigitalPin.P14, 0)
+    basic.pause(1000)
+    basic.showIcon(IconNames.Yes)
 })
 
 ```
 
-## Étape 8
+## Étape 15
 
-Dupplique le bloc ``||input: lorsque le bouton A est pressé||`` et son contenu.
-
-Remplace la valeur ``||input: A||`` par la valeur ``||input: A+B||``.
+Remplace le ``|| basic: crochet ||`` par un ``|| basic: X ||``.
 
 ```blocks
 
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+input.onButtonPressed(Button.B, function () {
+    pins.servoWritePin(AnalogPin.P1, 0)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
+    basic.pause(1000)
+    basic.showIcon(IconNames.No)
 })
-input.onButtonPressed(Button.AB, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-})
-
-
-```
-
-## Étape 7
-
-Modifie le contenu du nouveau bloc ``||input: lorsque le bouton B est pressé||``.
-
-Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P1 ||`` par ``|| pins: 180 ||``.
-
-Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P13 ||`` par ``|| pins: 0 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P14 ||`` par ``|| pins: 1 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.AB, function () {
-    pins.servoWritePin(AnalogPin.P1, 180)
-    pins.digitalWritePin(DigitalPin.P12, 0)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-})
-
 
 ```
 
 ## @showdialog 
 
-*** Attention ***
-
-N'oublie pas de brancher le servomoteur dans P1 et de brancher les lumières dans P12 - P13 - P14.
-
-Branche les lumières dans les broches jaunes (pôle positif) et dans les broches noires (pôle négatif / GND).
-
-## @showdialog 
-
-Félicitations! Tu as terminé de programmer un circuit électrique avec un servomoteur et des lumières.
+Félicitations! Tu as terminé de programmer une barrière et des lumières.
 
 Pour tester le circuit, réalise les branchements et télécharge la programmation dans le micro:bit.
