@@ -116,7 +116,7 @@ basic.forever(function () {
 
 Modifie le bloc ``|| logic: si vrai alors ||``.
 
-Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` par le bloc ``|| logic: 0 <= 0 ||``.
+Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` par le bloc ``|| logic: 0 ≤ 0 ||``.
 
 ```blocks
 
@@ -132,7 +132,7 @@ basic.forever(function () {
 
 ## Étape 10
 
-Modifie le bloc ``|| logic: 0 <= 0 ||``.
+Modifie le bloc ``|| logic: 0 ≤ 0 ||``.
 
 Remplace la valeur ``|| logic: 0 ||`` de gauche par le bloc ``|| input: niveau d'intensité lumineuse ||``.
 
@@ -211,7 +211,7 @@ basic.forever(function () {
 
 Modifie le nouveau bloc ``|| logic: si vrai alors ||``.
 
-Remplace ``|| logic: 0 <= 0 ||`` par ``|| logic: 0 >= 0 ||``.
+Remplace ``|| logic: 0 ≤ 0 ||`` par ``|| logic: 0 ≥ 0 ||``.
 
 Remplace la valeur ``|| logic: 39 ||`` par ``|| logic: 40 ||``.
 

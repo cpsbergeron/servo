@@ -515,10 +515,6 @@ input.onButtonPressed(Button.A, function () {
 
 ```
 
-## Étape 23
-
-Ajoute le bloc ``||input:lorsque le bouton B est pressé||`` pour réinitialiser les valeurs du servomoteur et des lumières.
-
 ## @showdialog 
 
 Bravo! Tu as terminé de programmer.

@@ -77,15 +77,14 @@ pins.digitalWritePin(DigitalPin.P14, 0)
 
 Crée une ``||variables: variable||`` et donne lui le nom ``||variables:Température||``.
 
-Ajoute le bloc ``||variables: définir Température ||`` dans le bloc ``|| basic: au démarrage ||``.
+Ajoute le bloc ``||variables: définir Température ||`` dans le bloc ``|| basic: toujours ||``.
 
 ```blocks
 
 let Température = 0
-pins.servoWritePin(AnalogPin.P1, 0)
-pins.digitalWritePin(DigitalPin.P12, 0)
-pins.digitalWritePin(DigitalPin.P13, 0)
-pins.digitalWritePin(DigitalPin.P14, 0)
+basic.forever(function () {
+    Température = 0
+})
 
 ```
 
@@ -95,11 +94,10 @@ Remplace la valeur ``||variables: 0||`` du bloc ``||variables: définir Tempéra
 
 ```blocks
 
-let Température = input.temperature()
-pins.servoWritePin(AnalogPin.P1, 0)
-pins.digitalWritePin(DigitalPin.P12, 0)
-pins.digitalWritePin(DigitalPin.P13, 0)
-pins.digitalWritePin(DigitalPin.P14, 0)
+let Température = 0
+basic.forever(function () {
+    Température = input.temperature()
+})
 
 ```
 
@@ -109,7 +107,9 @@ Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``||basic: toujours|
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
+    Température = input.temperature()
     basic.showNumber(0)
 })
 
@@ -123,8 +123,9 @@ Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` pa
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
 })
 
@@ -136,27 +137,31 @@ Ajoute le bloc ``|| basic: pause ||`` sous le bloc ``|| basic: montrer nombre ||
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(100)
 })
+
 
 ```
 
 ## Étape 11
 
-Modifie le bloc ``|| basic: pause (ms) 100 ||``.
+Modifie le bloc ``|| basic: pause (ms) ||``.
 
 Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par la valeur ``|| basic: 1000 ||``.
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
 })
+
 
 ```
 
@@ -166,8 +171,9 @@ Ajoute le bloc ``|| logic: si vrai alors ||`` sous le bloc ``|| basic: pause ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (true) {
@@ -185,8 +191,9 @@ Remplace la valeur ``|| logic: vrai ||`` du bloc ``|| logic: si vrai alors ||`` 
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (0 <= 0) {
@@ -206,8 +213,9 @@ Remplace la valeur ``|| logic: 0 ||`` de droite par la valeur ``|| logic: 21 ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -223,8 +231,9 @@ Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``|| logic: s
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -244,8 +253,9 @@ Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 45 ||``.
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -261,8 +271,9 @@ Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins:
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -285,8 +296,9 @@ Remplace la valeur ``|| pins: 0 ||`` du bloc ``|| pins: P12 ||`` par ``|| pins: 
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -305,8 +317,9 @@ Dupplique le bloc ``|| logic: si vrai alors ||`` et glisse-le sous le bloc ``|| 
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -333,8 +346,9 @@ Remplace le bloc ``|| logic: 0 ≤ 0 ||`` par le bloc ``|| logic: et ||``.
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -363,8 +377,9 @@ Remplace la ``|| logic: valeur ||`` de droite par le bloc ``|| logic: 0 ≤ 0 ||
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -393,8 +408,9 @@ Remplace la valeur ``|| logic: 0 ||`` de droite par la valeur ``|| logic: 22 ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -423,8 +439,9 @@ Remplace la valeur ``|| logic: 0 ||`` de droite par la valeur ``|| logic: 27 ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -455,8 +472,9 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 1 ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -481,8 +499,9 @@ Dupplique le premier bloc ``|| logic: si vrai alors ||`` et glisse-le sous le de
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -515,8 +534,9 @@ Remplace le bloc ``|| logic: 0 ≤ 0 ||`` par le bloc ``|| logic: 0 ≥ 0 ||``.
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -549,8 +569,9 @@ Remplace la valeur ``|| logic: 27 ||`` par la valeur ``|| logic: 28 ||``.
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
@@ -587,8 +608,9 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P14 ||`` par ``|| pins: 1 ||`
 
 ```blocks
 
+let Température = 0
 basic.forever(function () {
-    let Température = 0
+    Température = input.temperature()
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
