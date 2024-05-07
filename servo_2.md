@@ -150,7 +150,7 @@ basic.forever(function () {
 
 ```
 
-## Étape 111
+## Étape 11
 
 Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``|| logic: si vrai alors ||``.
 
