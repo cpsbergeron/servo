@@ -8,13 +8,9 @@ Programme le micro:bit, le servomoteur et le circuit électrique.
 
 ## Étape 1
 
-Conserve les blocs ``||basic:au démarrage||`` et ``||basic:toujours||``.
+Supprime le bloc ``||basic:toujours||``.
 
 ```blocks
-
-basic.forever(function () {
-    
-})
 
 ```
 
@@ -31,10 +27,6 @@ Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 ```blocks
 
 pins.servoWritePin(AnalogPin.P1, 0)
-basic.forever(function () {
-	
-})
-
 
 ```
 
@@ -48,9 +40,6 @@ pins.servoWritePin(AnalogPin.P1, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
-basic.forever(function () {
-	
-})
 
 ```
 ## Étape 4
@@ -69,9 +58,6 @@ pins.servoWritePin(AnalogPin.P1, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P13, 0)
 pins.digitalWritePin(DigitalPin.P14, 0)
-basic.forever(function () {
-	
-})
 
 ```
 
