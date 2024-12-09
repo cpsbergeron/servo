@@ -150,53 +150,6 @@ input.onButtonPressed(Button.B, function () {
 })
 
 ```
-## Étape 10
-
-Ajoute le bloc ``||basic:montrer nombre||`` dans le bloc ``||input:lorsque le bouton A+B est pressé||``.
-
-Remplace la valeur ``||basic:montrer nombre||`` du bloc ``||basic:montrer nombre||`` par ``||variable:Angle||``
-
-```blocks
-
-input.onButtonPressed(Button.AB, function () {
-    let Angle = 0
-    basic.showNumber(Angle)
-})
-
-```
-
-## Étape 11
-
-Ajoute le bloc ``||variables:définir Angle||`` dans le bloc ``||input:lorsque secouer||``.
-
-La valeur ``||variables:0||`` demeure la même.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.Shake, function () {
-    Angle = 0
-})
-
-```
-
-## Étape 12
-
-Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||variables:définir Angle||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
-
-```blocks
-
-let Angle = 0
-input.onGesture(Gesture.Shake, function () {
-    Angle = 0
-    pins.servoWritePin(AnalogPin.P0, 0)
-})
-
-```
 
 ## @showdialog 
 
