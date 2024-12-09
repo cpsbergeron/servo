@@ -8,13 +8,9 @@ Programme le micro:bit, le servomoteur et le circuit électrique.
 
 ## Étape 1
 
-Conserve les blocs ``||basic:au démarrage||`` et ``||basic:toujours||``.
+Supprime le bloc ``||basic:toujours||``.
 
 ```blocks
-
-basic.forever(function () {
-    
-})
 
 ```
 
