@@ -60,7 +60,7 @@ Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
 Remplace les valeurs des blocs ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
 
-Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 0 ||``, ``|| pins: 0 ||`` et ``|| pins: 0 ||``.
+Les valeurs ``|| pins: 0 ||`` demeurent les mêmes.
 
 Regarde l'indice!
 
@@ -103,7 +103,7 @@ basic.forever(function () {
 
 ## Étape 8
 
-Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``||basic: toujours||``.
+Ajoute le bloc ``|| basic: montrer nombre ||`` sous le bloc ``||variables: définir Température ||``.
 
 ```blocks
 
@@ -565,7 +565,7 @@ basic.forever(function () {
 
 Modifie le troisième bloc ``|| logic: si vrai alors ||``.
 
-Remplace la valeur ``|| logic: 27 ||`` par la valeur ``|| logic: 28 ||``.
+Remplace la valeur ``|| logic: 21 ||`` par la valeur ``|| logic: 28 ||``.
 
 ```blocks
 
