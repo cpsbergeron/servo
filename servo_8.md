@@ -39,7 +39,7 @@ pins.servoWritePin(AnalogPin.P1, 0)
 
 ## Étape 4
 
-Ajoute les blocs ``||pins: écrire sur la broche ||`` sous le bloc ``||pins:régler position servo||``.
+Ajoute trois blocs ``||pins: écrire sur la broche ||`` sous le bloc ``||pins:régler position servo||``.
 
 Remplace les broches ``||pins: P0 ||`` par ``||pins: P12 ||``, ``||pins: P13 ||`` et ``||pins: P14 ||``.
 
