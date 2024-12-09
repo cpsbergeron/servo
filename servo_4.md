@@ -215,42 +215,6 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 13
-
-Dupplique le bloc ``||input: lorsque le bouton A est pressé||`` et son contenu.
-
-Remplace le bloc ``||input:A||`` par le bloc ``||input:lorsquer secouer||``.
-
-```blocks
-
-input.onGesture(Gesture.Shake, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-})
-
-```
-
-## Étape 12
-
-Modifie le contenu du nouveau bloc ``||input: lorsque secouer||``.
-
-Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P1 ||`` par ``|| pins: 0 ||``.
-
-Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
-
-```blocks
-
-input.onGesture(Gesture.Shake, function () {
-    pins.servoWritePin(AnalogPin.P1, 0)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-})
-
-```
-
 ## @showdialog 
 
 *** Attention ***
