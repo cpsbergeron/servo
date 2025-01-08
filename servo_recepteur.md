@@ -244,6 +244,4 @@ basic.forever(function () {
 
 Félicitations! Tu as terminé de programmer le récepteur.
 
-Pour tester, télécharge la programmation dans le micro:bit.
-
-Assure-toi que l'émetteur est bien branché et programmé.
+Maintenant, apporte les modifications nécessaires.
