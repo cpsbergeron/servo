@@ -8,7 +8,7 @@ Transforme le micro:bit en récepteur.
 
 ## Étape 1
 
-Ajout le bloc ``||radio:radio définir groupe||`` dans le bloc ``||basic:au démarrage||``.
+Ajoute le bloc ``||radio:radio définir groupe||`` dans le bloc ``||basic:au démarrage||``.
 
 ```blocks
 

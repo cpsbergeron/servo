@@ -26,13 +26,17 @@ Modifie le bloc ``||radio:radio définir groupe||``.
 
 Remplace la valeur ``||radio:1||`` par une valeur entre  ``||radio:1||`` et  ``||radio:255||``.
 
-Le valeur pour l'émetteur et le récepteur doit être la même.
-
 ```blocks
 
 radio.setGroup(1)
 
 ```
+## @showdialog 
+
+Le valeur pour l'émetteur et le récepteur doit être la même.
+
+Il s'agit de la fréquence radio qui sera utilisée par les deux micro:bit.
+
 
 ## Étape 4
 
@@ -91,5 +95,3 @@ input.onButtonPressed(Button.B, function () {
 Félicitations! Tu as terminé de programmer l'émetteur.
 
 Pour tester, télécharge la programmation dans le micro:bit.
-
-Assure-toi que le récepteur est bien branché et programmé.
