@@ -232,24 +232,11 @@ Apporte les modifications nécessaires selon les contraintes présentées dans l
 
 ```blocks
 
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "Ouvrir") {
-    	
-    }
-    if (receivedString == "Fermer") {
-    	
-    }
-})
-radio.setGroup(1)
-pins.servoWritePin(AnalogPin.P0, 180)
-pins.digitalWritePin(DigitalPin.P0, 0)
-pins.digitalWritePin(DigitalPin.P0, 0)
 basic.forever(function () {
     basic.showIcon(IconNames.Heart)
     basic.showString("Hello!")
     basic.pause(100)
 })
-
 
 ```
 
