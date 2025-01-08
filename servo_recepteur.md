@@ -226,6 +226,32 @@ radio.onReceivedString(function (receivedString) {
 })
 
 ```
+## Étape 16 
+
+Apporte les modifications nécessaires selon les contraintes présentées dans le document.
+
+```blocks
+
+radio.onReceivedString(function (receivedString) {
+    if (receivedString == "Ouvrir") {
+    	
+    }
+    if (receivedString == "Fermer") {
+    	
+    }
+})
+radio.setGroup(1)
+pins.servoWritePin(AnalogPin.P0, 180)
+pins.digitalWritePin(DigitalPin.P0, 0)
+pins.digitalWritePin(DigitalPin.P0, 0)
+basic.forever(function () {
+    basic.showIcon(IconNames.Heart)
+    basic.showString("Hello!")
+    basic.pause(100)
+})
+
+
+```
 
 ## @showdialog 
 
