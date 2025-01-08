@@ -8,6 +8,10 @@ Transforme le micro:bit en récepteur.
 
 ## Étape 1
 
+Supprime le bloc ``||basic:toujours||``.
+
+## Étape 2
+
 Ajoute le bloc ``||radio:radio définir groupe||`` dans le bloc ``||basic:au démarrage||``.
 
 ```blocks
@@ -16,7 +20,7 @@ radio.setGroup(1)
 
 ```
 
-## Étape 2
+## Étape 3
 
 Modifie le bloc ``||radio:radio définir groupe||``.
 
@@ -30,527 +34,66 @@ radio.setGroup(1)
 
 ```
 
-## Étape 3
+## Étape 4
 
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic: au démarrage||``.
+Ajoute le bloc ``|| pins: régler position servo ||`` sous le bloc ``||radio:radio définir groupe||``.
 
 ```blocks
 
+radio.setGroup(1)
 pins.servoWritePin(AnalogPin.P0, 180)
-
 ```
 
-## Étape 4
+## Étape 5
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P2, 0)
-
-```
-
-## Étape 5
-
-Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
-
-P12 = Vert - P13 = Jaune - P14 = Rouge
-
-```blocks
-
-pins.servoWritePin(AnalogPin.P2, 0)
-pins.digitalWritePin(DigitalPin.P0, 0)
-pins.digitalWritePin(DigitalPin.P0, 0)
-pins.digitalWritePin(DigitalPin.P0, 0)
+radio.setGroup(1)
+pins.servoWritePin(AnalogPin.P1, 0)
 
 ```
 
 ## Étape 6
 
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
+Ajoute deux blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
 
-Remplace les broches ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
-
-Remplace les valeurs ``|| pins: 0 ||`` par ``|| pins: 0 ||``, ``|| pins: 0 ||`` et ``|| pins: 1 ||``.
-
-P12 = Vert - P13 = Jaune - P14 = Rouge
+P12 = Vert - P14 = Rouge
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P2, 0)
-pins.digitalWritePin(DigitalPin.P12, 0)
-pins.digitalWritePin(DigitalPin.P13, 0)
-pins.digitalWritePin(DigitalPin.P14, 1)
+radio.setGroup(1)
+pins.servoWritePin(AnalogPin.P1, 0)
+pins.digitalWritePin(DigitalPin.P0, 0)
+pins.digitalWritePin(DigitalPin.P0, 0)
 
 ```
 
 ## Étape 7
 
-Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input: lorsque le bouton A est pressé||``.
+Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
+
+Remplace les broches ``|| pins: P0 ||`` par ``|| pins: P12 ||`` et ``|| pins: P14 ||``.
+
+Les valeurs ``|| pins: 0 ||`` demeurent les mêmes.
+
+P12 = Vert - P14 = Rouge
 
 ```blocks
 
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P0, 180)
-})
+radio.setGroup(1)
+pins.servoWritePin(AnalogPin.P1, 0)
+pins.digitalWritePin(DigitalPin.P12, 0)
+pins.digitalWritePin(DigitalPin.P14, 0)
 
 ```
 
 ## Étape 8
-
-Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P2 ||``.
-
-Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 90 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-})
-
-```
-
-## Étape 9
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: régler position servo ||``.
-
-P12 = Vert - P13 = Jaune - P14 = Rouge
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-    })
-
-```
-
-## Étape 10
-
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P14 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
-
-Regarde l'indice!
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-})
-
-```
-
-## Étape 11
-
-Ajoute le bloc ``|| basic: pause (ms) ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
-
-Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause (ms) ||`` par la valeur ``|| basic: 1000 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-})
-
-```
-
-## Étape 12
-
-Ajoute le bloc ``|| basic: montrer l'icône  ||`` sous le bloc ``|| basic: pause (ms) ||``.
-
-Regarde l'indice.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-})
-
-```
-
-## Étape 13
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| basic: montrer l'icône ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-})
-
-```
-
-## Étape 14
-
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P14 ||``.
-
-La valeur ``|| pins: 0 ||`` demeure la même.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-})
-
-```
-
-## Étape 15
-
-Ajoute le bloc ``|| basic: pause (ms) ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
-
-La valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause (ms) ||`` demeure la même.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-})
-
-```
-
-## Étape 16
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| basic: pause (ms) ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-})
-
-```
-
-## Étape 17
-
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P13 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-})
-
-```
-
-## Étape 18
-
-Ajoute le bloc ``|| basic: pause (ms) ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
-
-Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause (ms) ||`` par la valeur ``|| basic: 1000 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-})
-
-```
-
-## Étape 19
-
-Ajoute le bloc ``|| basic: montrer LEDs ||`` sous le bloc ``|| basic: pause (ms) ||``.
-
-Dessine un petit X.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-})
-
-```
-
-## Étape 20
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| basic: montrer LEDs ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-})
-
-```
-
-## Étape 21
-
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P13 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 0 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-})
-
-```
-
-## Étape 22
-
-Ajoute le bloc ``|| basic: pause (ms) ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
-
-La valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause (ms) ||`` demeure la même.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    basic.pause(100)
-})
-
-```
-
-## Étape 23
-
-Ajoute le bloc ``|| pins: écrire sur la broche ||`` sous le bloc ``|| basic: pause (ms) ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P0, 0)
-})
-
-```
-
-## Étape 24
-
-Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
-
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P12 ||``.
-
-Remplace la valeur ``|| pins: 0 ||`` par ``|| pins: 1 ||``.
-
-Regarde l'indice!
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-})
-
-```
-
-## Étape 25
-
-Ajoute le bloc ``|| basic: pause (ms) ||`` sous le bloc ``|| pins: écrire sur la broche ||``.
-
-Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause (ms) ||`` par la valeur ``|| basic: 1000 ||``.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-    basic.pause(1000)
-})
-
-```
-
-## Étape 26
-
-Ajoute le bloc ``|| basic: montrer l'icône  ||`` sous le bloc ``|| basic: pause (ms) ||``.
-
-Regarde l'indice.
-
-```blocks
-
-input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P2, 90)
-    pins.digitalWritePin(DigitalPin.P14, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P14, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P13, 1)
-    basic.pause(1000)
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . # . .
-        . # . # .
-        . . . . .
-        `)
-    pins.digitalWritePin(DigitalPin.P13, 0)
-    basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P12, 1)
-    basic.pause(1000)
-    basic.showIcon(IconNames.Yes)
-})
-
-```
-
-## @showdialog 
-
-Réalise une programmation pour fermer la barrière lorsque le bouton B est pressé.
-
-Duplique le bloc ``||input:lorsque le bouton A est pressé||`` et modifie les valeurs.
-
-## Étape 27
 
 Ajoute le bloc ``||logic:si vrai alors||`` dans le bloc ``||radio:quand une donnée est reçue par radio receivedString||``.
 
@@ -564,7 +107,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 28
+## Étape 9
 
 Remplace la valeur ``||logic:vrai||`` du bloc ``||logic:si vrai alors||`` par le bloc ``||logic:"" = ""||``.
 
@@ -578,7 +121,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 29
+## Étape 10
 
 Modifie le bloc ``||logic:"" = ""||``.
 
@@ -596,9 +139,9 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 30
+## Étape 11
 
-Modifie le bloc ``||logic:"" = ""||``. (suite)
+Modifie le bloc ``||logic:"" = ""||``. 
 
 Remplace ``||logic:""||`` de droite par le mot Ouvrir. 
 
@@ -612,7 +155,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 31
+## Étape 12
 
 Ajoute le bloc ``||logic:si vrai alors||`` sous le bloc ``||logic:si vrai alors||``.
 
@@ -629,7 +172,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 32
+## Étape 13
 
 Remplace la valeur ``||logic:vrai||`` du bloc ``||logic:si vrai alors||`` par le bloc ``||logic:"" = ""||``.
 
@@ -646,7 +189,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 33
+## Étape 14
 
 Modifie le bloc ``||logic:"" = ""||``.
 
@@ -667,7 +210,7 @@ radio.onReceivedString(function (receivedString) {
 
 ```
 
-## Étape 34
+## Étape 15
 
 Remplace le bloc ``||logic:""||`` de droite par le mot Fermer. 
 
@@ -683,50 +226,6 @@ radio.onReceivedString(function (receivedString) {
 })
 
 ```
-
-## Étape 35
-
-Glisse la programmation sous le bloc ``||input: lorsque le bouton A est pressé||`` dans le bloc ``||logic:si Ouvrir alors||``.
-
-Supprime le bloc ``||input: lorsque le bouton A est pressé||``.
-
-```blocks
-
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "Ouvrir") {
-        pins.servoWritePin(AnalogPin.P2, 90)
-        pins.digitalWritePin(DigitalPin.P14, 1)
-        basic.pause(500)
-        basic.showIcon(IconNames.No)
-        pins.digitalWritePin(DigitalPin.P14, 0)
-        basic.pause(100)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        basic.pause(500)
-        basic.showLeds(`
-            . . . . .
-            . # . # .
-            . . # . .
-            . # . # .
-            . . . . .
-            `)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        basic.pause(100)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        basic.pause(500)
-        basic.showIcon(IconNames.Yes)
-    }
-    if (receivedString == "Fermer") {
-        
-    }
-})
-
-```
-
-## Étape 36
-
-Glisse la programmation sous le bloc ``||input: lorsque le bouton B est pressé||`` dans le bloc ``||logic:si Fermer alors||``.
-
-Supprime le bloc ``||input: lorsque le bouton B est pressé||``.
 
 ## @showdialog 
 
