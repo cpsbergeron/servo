@@ -14,6 +14,7 @@ Supprime le bloc ``||basic:toujours||``.
 
 Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic:au démarrage||``.
 
+
 ```blocks
 
 pins.servoWritePin(AnalogPin.P0, 180)
@@ -126,7 +127,7 @@ input.onButtonPressed(Button.A, function () {
 
 ```
 
-## Étape 9
+## Étape 10
 
 Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``|| loops: répéter 4 fois ||``.
 
@@ -167,6 +168,42 @@ input.onButtonPressed(Button.B, function () {
     Angle = randint(91, 179)
     pins.servoWritePin(AnalogPin.P1, Angle)
     basic.showNumber(Angle)
+})
+
+```
+
+## Étape 13
+
+Ajoute le bloc ``|| loops: répéter 4 fois ||`` sous le bloc ``|| pins: régler position servo ||``.
+
+```blocks
+
+let Angle = 0
+input.onButtonPressed(Button.B, function () {
+    Angle = randint(91, 179)
+    pins.servoWritePin(AnalogPin.P1, Angle)
+    for (let index = 0; index < 4; index++) {
+    	
+    }
+})
+
+```
+
+## Étape 10
+
+Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``|| loops: répéter 4 fois ||``.
+
+Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` par le bloc ``|| variables: Angle ||``.
+
+```blocks
+
+let Angle = 0
+input.onButtonPressed(Button.B, function () {
+    Angle = randint(91, 179)
+    pins.servoWritePin(AnalogPin.P1, Angle)
+    for (let index = 0; index < 4; index++) {
+        basic.showNumber(Angle)
+    }
 })
 
 ```
