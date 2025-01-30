@@ -151,6 +151,19 @@ input.onButtonPressed(Button.A, function () {
 
 Dupplique la séquence de programmation du bloc ``||input:lorsque le bouton A est pressé||``.
 
+```blocks
+
+let Angle = 0
+input.onButtonPressed(Button.A, function () {
+    Angle = randint(1, 89)
+    pins.servoWritePin(AnalogPin.P1, Angle)
+    for (let index = 0; index < 4; index++) {
+        basic.showNumber(Angle)
+    }
+})
+
+```
+
 ## Étape 12
 
 Modifie le nouveau bloc ``||input:lorsque le bouton A est pressé||``.
@@ -167,43 +180,25 @@ let Angle = 0
 input.onButtonPressed(Button.B, function () {
     Angle = randint(91, 179)
     pins.servoWritePin(AnalogPin.P1, Angle)
-    basic.showNumber(Angle)
+    for (let index = 0; index < 4; index++) {
+        basic.showNumber(Angle)
+    }
 })
 
 ```
 
 ## Étape 13
 
-Ajoute le bloc ``|| loops: répéter 4 fois ||`` sous le bloc ``|| pins: régler position servo ||``.
+Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input:lorsque secouer||``.
+
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+
+Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
-let Angle = 0
-input.onButtonPressed(Button.B, function () {
-    Angle = randint(91, 179)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    for (let index = 0; index < 4; index++) {
-    	
-    }
-})
-
-```
-
-## Étape 10
-
-Ajoute le bloc ``|| basic: montrer nombre ||`` dans le bloc ``|| loops: répéter 4 fois ||``.
-
-Remplace la valeur ``|| basic: 0 ||`` du bloc ``|| basic: montrer nombre ||`` par le bloc ``|| variables: Angle ||``.
-
-```blocks
-
-let Angle = 0
-input.onButtonPressed(Button.B, function () {
-    Angle = randint(91, 179)
-    pins.servoWritePin(AnalogPin.P1, Angle)
-    for (let index = 0; index < 4; index++) {
-        basic.showNumber(Angle)
-    }
+input.onGesture(Gesture.Shake, function () {
+       pins.servoWritePin(AnalogPin.P1, 0)
 })
 
 ```
