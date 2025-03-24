@@ -48,14 +48,14 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
 radio.setGroup(1)
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -68,7 +68,7 @@ P12 = Vert - P14 = Rouge
 ```blocks
 
 radio.setGroup(1)
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 
@@ -87,7 +87,7 @@ P12 = Vert - P14 = Rouge
 ```blocks
 
 radio.setGroup(1)
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P14, 0)
 

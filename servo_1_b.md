@@ -24,13 +24,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -50,14 +50,14 @@ input.onButtonPressed(Button.A, function () {
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 45 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
 })
 
 ```
@@ -77,7 +77,7 @@ Remplace la valeur ``||pins:45||`` par ``||pins:90||``.
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
 })
 
 ```
@@ -97,7 +97,7 @@ Remplace la valeur ``||pins:45||`` par ``||pins:180||``.
 ```blocks
 
 input.onButtonPressed(Button.AB, function () {
-    pins.servoWritePin(AnalogPin.P1, 180)
+    pins.servoWritePin(AnalogPin.P16, 180)
 })
 
 ```
@@ -106,14 +106,14 @@ input.onButtonPressed(Button.AB, function () {
 
 Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||input:lorsque secouer||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
 input.onGesture(Gesture.Shake, function () {
-       pins.servoWritePin(AnalogPin.P1, 0)
+       pins.servoWritePin(AnalogPin.P16, 0)
 })
 
 ```

@@ -10,23 +10,19 @@ Programme le micro:bit, le servomoteur et le circuit électrique.
 
 Supprime le bloc ``||basic:toujours||``.
 
-```blocks
-
-```
-
 ## Étape 2
 
 Ajoute le bloc ``|| pins: régler position servo ||`` dans le bloc ``||basic: au démarrage||``.
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -36,7 +32,7 @@ Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins:
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
@@ -54,7 +50,7 @@ Regarde l'indice!
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P13, 0)
 pins.digitalWritePin(DigitalPin.P14, 0)
@@ -77,14 +73,14 @@ input.onButtonPressed(Button.A, function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 45 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
 })
 
 ```
@@ -96,7 +92,7 @@ Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins:
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
     pins.digitalWritePin(DigitalPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P0, 0)
@@ -117,7 +113,7 @@ Regarde l'indice!
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
@@ -134,7 +130,7 @@ Remplace la valeur ``||input:A||`` par la valeur ``||input:B||``.
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
@@ -146,7 +142,7 @@ input.onButtonPressed(Button.B, function () {
 
 Modifie le contenu du nouveau bloc ``||input: lorsque le bouton B est pressé||``.
 
-Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P1 ||`` par ``|| pins: 90 ||``.
+Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P16 ||`` par ``|| pins: 90 ||``.
 
 Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
 
@@ -155,7 +151,7 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 1 ||`
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.digitalWritePin(DigitalPin.P14, 0)
@@ -172,7 +168,7 @@ Remplace la valeur ``||input: A||`` par la valeur ``||input: A+B||``.
 ```blocks
 
 input.onButtonPressed(Button.AB, function () {
-    pins.servoWritePin(AnalogPin.P1, 45)
+    pins.servoWritePin(AnalogPin.P16, 45)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P14, 0)
@@ -184,7 +180,7 @@ input.onButtonPressed(Button.AB, function () {
 
 Modifie le contenu du nouveau bloc ``||input: lorsque le bouton B est pressé||``.
 
-Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P1 ||`` par ``|| pins: 180 ||``.
+Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: P16 ||`` par ``|| pins: 180 ||``.
 
 Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P13 ||`` par ``|| pins: 0 ||``.
 
@@ -193,7 +189,7 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P14 ||`` par ``|| pins: 1 ||`
 ```blocks
 
 input.onButtonPressed(Button.AB, function () {
-    pins.servoWritePin(AnalogPin.P1, 180)
+    pins.servoWritePin(AnalogPin.P16, 180)
     pins.digitalWritePin(DigitalPin.P12, 0)
     pins.digitalWritePin(DigitalPin.P13, 0)
     pins.digitalWritePin(DigitalPin.P14, 1)
@@ -205,7 +201,7 @@ input.onButtonPressed(Button.AB, function () {
 
 *** Attention ***
 
-N'oublie pas de brancher le servomoteur dans P1 et de brancher les lumières dans P12 - P13 - P14.
+N'oublie pas de brancher le servomoteur dans P16 et de brancher les lumières dans P12 - P13 - P14.
 
 Branche les lumières dans les broches jaunes (pôle positif) et dans les broches noires (pôle négatif / GND).
 

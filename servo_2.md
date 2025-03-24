@@ -32,13 +32,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -170,7 +170,7 @@ basic.forever(function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 La valeur ``|| pins: 180 ||`` demeure la même.
 
@@ -180,7 +180,7 @@ basic.forever(function () {
     basic.showNumber(input.lightLevel())
     basic.pause(2000)
     if (input.lightLevel() <= 39) {
-        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.servoWritePin(AnalogPin.P16, 180)
     }
 })
 
@@ -198,10 +198,10 @@ basic.forever(function () {
     basic.showNumber(input.lightLevel())
     basic.pause(2000)
     if (input.lightLevel() <= 39) {
-        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.servoWritePin(AnalogPin.P16, 180)
     }
     if (input.lightLevel() <= 39) {
-        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.servoWritePin(AnalogPin.P16, 180)
     }
 })
 
@@ -223,10 +223,10 @@ basic.forever(function () {
     basic.showNumber(input.lightLevel())
     basic.pause(2000)
     if (input.lightLevel() <= 39) {
-        pins.servoWritePin(AnalogPin.P1, 180)
+        pins.servoWritePin(AnalogPin.P16, 180)
     }
     if (input.lightLevel() >= 40) {
-        pins.servoWritePin(AnalogPin.P1, 0)
+        pins.servoWritePin(AnalogPin.P16, 0)
     }
 })
 

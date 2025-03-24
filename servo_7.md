@@ -25,13 +25,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie le bloc ``||pins:régler position servo||``.
 
-Remplace la valeur ``||pins:P0||`` par ``||pins:P1||``.
+Remplace la valeur ``||pins:P0||`` par ``||pins:P16||``.
 
 Remplace la valeur ``||pins:180||`` par ``||pins:0||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -41,7 +41,7 @@ Ajoute deux blocs ``||pins:écrire sur la broche||`` sous le bloc ``||pins:régl
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 
@@ -57,7 +57,7 @@ Les valeurs ``||pins:0||`` demeurent les mêmes.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P13, 0)
 
@@ -207,7 +207,7 @@ input.onButtonPressed(Button.A, function () {
 
 Ajoute le bloc ``||pins: régler position servo ||`` dans le bloc ``||logic: si alors ||``.
 
-Remplace la broche ``||pins: P0 ||`` par la valeur ``||pins: P1 ||``.
+Remplace la broche ``||pins: P0 ||`` par la valeur ``||pins: P16 ||``.
 
 Remplace la valeur ``||pins: 180 ||`` par le bloc ``||variables: Angle ||``.
 
@@ -219,7 +219,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showNumber(Angle)
     basic.pause(2000)
     if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
+        pins.servoWritePin(AnalogPin.P16, Angle)
     }
 })
 
@@ -241,7 +241,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showNumber(Angle)
     basic.pause(2000)
     if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
+        pins.servoWritePin(AnalogPin.P16, Angle)
         pins.digitalWritePin(DigitalPin.P12, 1)
         pins.digitalWritePin(DigitalPin.P13, 0)
     }
@@ -263,7 +263,7 @@ input.onButtonPressed(Button.A, function () {
     basic.showNumber(Angle)
     basic.pause(2000)
     if (Angle < 90) {
-        pins.servoWritePin(AnalogPin.P1, Angle)
+        pins.servoWritePin(AnalogPin.P16, Angle)
         pins.digitalWritePin(DigitalPin.P12, 1)
         pins.digitalWritePin(DigitalPin.P13, 0)
         basic.showLeds(`

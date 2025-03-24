@@ -31,13 +31,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -47,7 +47,7 @@ Ajoute trois blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins:
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
@@ -58,7 +58,7 @@ pins.digitalWritePin(DigitalPin.P0, 0)
 
 Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
-Remplace les valeurs des blocs ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
+Remplace les valeurs des blocs ``|| pins: P0 ||`` par ``|| pins: P162 ||``, ``|| pins: P163 ||`` et ``|| pins: P164 ||``.
 
 Les valeurs ``|| pins: 0 ||`` demeurent les mêmes.
 
@@ -66,10 +66,10 @@ Regarde l'indice!
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
-pins.digitalWritePin(DigitalPin.P12, 0)
-pins.digitalWritePin(DigitalPin.P13, 0)
-pins.digitalWritePin(DigitalPin.P14, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
+pins.digitalWritePin(DigitalPin.P162, 0)
+pins.digitalWritePin(DigitalPin.P163, 0)
+pins.digitalWritePin(DigitalPin.P164, 0)
 
 ```
 
@@ -247,7 +247,7 @@ basic.forever(function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 45 ||``.
 
@@ -259,7 +259,7 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.servoWritePin(AnalogPin.P16, 45)
     }
 })
 
@@ -277,7 +277,7 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
+        pins.servoWritePin(AnalogPin.P16, 45)
         pins.digitalWritePin(DigitalPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P0, 0)
         pins.digitalWritePin(DigitalPin.P0, 0)
@@ -290,9 +290,9 @@ basic.forever(function () {
 
 Modifie les valeurs des blocs ``|| pins: écrire sur la broche ||``.
 
-Remplace les valeurs ``|| pins: P0 ||`` par ``|| pins: P12 ||``, ``|| pins: P13 ||`` et ``|| pins: P14 ||``.
+Remplace les valeurs ``|| pins: P0 ||`` par ``|| pins: P162 ||``, ``|| pins: P163 ||`` et ``|| pins: P164 ||``.
 
-Remplace la valeur ``|| pins: 0 ||`` du bloc ``|| pins: P12 ||`` par ``|| pins: 1 ||``.
+Remplace la valeur ``|| pins: 0 ||`` du bloc ``|| pins: P162 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -302,10 +302,10 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -323,16 +323,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -352,16 +352,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (false && false) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -383,16 +383,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (0 >= 0 && 0 <= 0) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -414,16 +414,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 0 <= 0) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -445,16 +445,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -466,9 +466,9 @@ Modifie les valeurs des blocs ``|| pins: régler position servo ||`` et des bloc
 
 Remplace la valeur ``|| pins: 45 ||`` de ``|| pins: régler position servo ||`` par ``|| pins: 90||``.
 
-Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
+Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P162 ||`` par ``|| pins: 0 ||``.
 
-Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 1 ||``.
+Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P163 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -478,16 +478,16 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 1)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -505,22 +505,22 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 90)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 1)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -540,22 +540,22 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 90)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 1)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -575,22 +575,22 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 90)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 1)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 28) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
 })
 
@@ -602,9 +602,9 @@ Modifie les valeurs du bloc ``|| pins: régler position servo ||`` et des blocs 
 
 Remplace le valeur ``|| pins: 45 ||`` du bloc ``|| pins: régler position servo ||`` par ``|| pins: 180||``.
 
-Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P12 ||`` par ``|| pins: 0 ||``.
+Remplace la valeur ``|| pins: 1 ||`` de ``|| pins: P162 ||`` par ``|| pins: 0 ||``.
 
-Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P14 ||`` par ``|| pins: 1 ||``.
+Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P164 ||`` par ``|| pins: 1 ||``.
 
 ```blocks
 
@@ -614,22 +614,22 @@ basic.forever(function () {
     basic.showNumber(Température)
     basic.pause(1000)
     if (Température <= 21) {
-        pins.servoWritePin(AnalogPin.P1, 45)
-        pins.digitalWritePin(DigitalPin.P12, 1)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 45)
+        pins.digitalWritePin(DigitalPin.P162, 1)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 22 && 27 <= Température) {
-        pins.servoWritePin(AnalogPin.P1, 90)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 1)
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        pins.servoWritePin(AnalogPin.P16, 90)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 1)
+        pins.digitalWritePin(DigitalPin.P164, 0)
     }
     if (Température >= 28) {
-        pins.servoWritePin(AnalogPin.P1, 180)
-        pins.digitalWritePin(DigitalPin.P12, 0)
-        pins.digitalWritePin(DigitalPin.P13, 0)
-        pins.digitalWritePin(DigitalPin.P14, 1)
+        pins.servoWritePin(AnalogPin.P16, 180)
+        pins.digitalWritePin(DigitalPin.P162, 0)
+        pins.digitalWritePin(DigitalPin.P163, 0)
+        pins.digitalWritePin(DigitalPin.P164, 1)
     }
 })
 

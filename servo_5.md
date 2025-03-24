@@ -10,9 +10,6 @@ Programme le micro:bit, le servomoteur et le circuit électrique.
 
 Supprime le bloc ``||basic:toujours||``.
 
-```blocks
-
-```
 
 ## Étape 2
 
@@ -28,13 +25,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -44,7 +41,7 @@ Ajoute deux blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: 
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 pins.digitalWritePin(DigitalPin.P0, 0)
 
@@ -64,7 +61,7 @@ P12 = Vert - P13 = Rouge
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 pins.digitalWritePin(DigitalPin.P12, 0)
 pins.digitalWritePin(DigitalPin.P13, 1)
 
@@ -86,14 +83,14 @@ input.onButtonPressed(Button.A, function () {
 
 Modifie les valeurs du bloc ``|| pins: régler position servo ||``.
 
-Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P1 ||``.
+Remplace la valeur ``|| pins: P0 ||`` par ``|| pins: P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins: 90 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
 })
 
 ```
@@ -105,7 +102,7 @@ Ajoute deux blocs ``|| pins: écrire sur la broche ||`` sous le bloc ``|| pins: 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P0, 0)
     pins.digitalWritePin(DigitalPin.P0, 0)
     })
@@ -125,7 +122,7 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 0 ||`
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
 })
@@ -141,7 +138,7 @@ Remplace la valeur ``|| basic: 100 ||`` par ``|| basic: 1000 ||``.
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     basic.pause(1000)
@@ -158,7 +155,7 @@ Remplace le ``|| basic: le grand coeur ||`` par un ``|| basic: crochet ||``.
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     basic.pause(1000)
@@ -176,7 +173,7 @@ Remplace la valeur ``|| input: A ||`` par ``|| input: B ||``.
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     basic.pause(1000)
@@ -194,7 +191,7 @@ Remplace la valeur ``|| pins: 90 ||`` par ``|| pins: 0 ||``.
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 0)
+    pins.servoWritePin(AnalogPin.P16, 0)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     basic.pause(1000)
@@ -214,7 +211,7 @@ Remplace la valeur ``|| pins: 0 ||`` de ``|| pins: P13 ||`` par ``|| pins: 1 ||`
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     pins.digitalWritePin(DigitalPin.P12, 0)
     pins.digitalWritePin(DigitalPin.P13, 1)
     basic.pause(1000)
@@ -230,7 +227,7 @@ Remplace le ``|| basic: crochet ||`` par un ``|| basic: X ||``.
 ```blocks
 
 input.onButtonPressed(Button.B, function () {
-    pins.servoWritePin(AnalogPin.P1, 0)
+    pins.servoWritePin(AnalogPin.P16, 0)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 0)
     basic.pause(1000)

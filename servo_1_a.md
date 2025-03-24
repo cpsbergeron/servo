@@ -24,13 +24,13 @@ pins.servoWritePin(AnalogPin.P0, 180)
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
-pins.servoWritePin(AnalogPin.P1, 0)
+pins.servoWritePin(AnalogPin.P16, 0)
 
 ```
 
@@ -50,14 +50,14 @@ input.onButtonPressed(Button.A, function () {
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 90 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
 })
 
 ```
@@ -71,7 +71,7 @@ Remplace la valeur ``|| basic: 100 ||`` du bloc ``|| basic: pause ||`` par la va
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     basic.pause(3000)
 })
 
@@ -83,16 +83,16 @@ Ajoute le bloc ``|| pins: régler position du servo ||`` sous le bloc ``|| basic
 
 Modifie le bloc ``|| pins: régler position servo ||``.
 
-Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P1 ||``.
+Remplace la broche ``|| pins: P0 ||`` par ``|| pins : P16 ||``.
 
 Remplace la valeur ``|| pins: 180 ||`` par ``|| pins : 0 ||``.
 
 ```blocks
 
 input.onButtonPressed(Button.A, function () {
-    pins.servoWritePin(AnalogPin.P1, 90)
+    pins.servoWritePin(AnalogPin.P16, 90)
     basic.pause(3000)
-    pins.servoWritePin(AnalogPin.P1, 0)
+    pins.servoWritePin(AnalogPin.P16, 0)
 })
 
 ```
