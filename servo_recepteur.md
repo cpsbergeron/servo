@@ -143,7 +143,7 @@ radio.onReceivedString(function (receivedString) {
 
 Modifie le bloc ``||logic:"" = ""||``. 
 
-Remplace ``||logic:""||`` de droite par le mot Ouvrir. 
+Remplace ``||logic:""||`` de droite par le mot **Ouvrir**. 
 
 ```blocks
 
@@ -212,7 +212,7 @@ radio.onReceivedString(function (receivedString) {
 
 ## Étape 15
 
-Remplace le bloc ``||logic:""||`` de droite par le mot Fermer. 
+Remplace le bloc ``||logic:""||`` de droite par le mot **Fermer**. 
 
 ```blocks
 
